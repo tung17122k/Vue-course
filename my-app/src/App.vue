@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <ComHeader
-      image="https://images.unsplash.com/photo-1719176372344-b29f6613e870?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      title="Leaning Vue"
+  <div class="youtube-list">
+    <ComHeader v-for="item in YoutubeData" :key="item.id"
+    :image="item.image"
+    :author="item.author"
+    :title ="item.title"
+    :avatar="item.avatar"
     ></ComHeader>
     <div v-show="isShow">
       <h1>Lap trinh</h1>
@@ -13,6 +15,7 @@
 
 <script>
 import ComHeader from "./components/ComHeader.vue";
+import {YoutubeData} from "./data.js"
 
 export default {
   name: "App",
@@ -22,9 +25,16 @@ export default {
   data() {
     return {
       isShow: true,
+      YoutubeData,
     };
   },
 };
 </script>
 
-<style></style>
+<style>
+.youtube-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  padding: 25px;
+}</style>
