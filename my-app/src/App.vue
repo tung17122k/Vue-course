@@ -10,11 +10,17 @@
     ></ComHeader>
   </div>
   <DispatchDB></DispatchDB>
+  <NavbarListComponent></NavbarListComponent>
+  <TodosList></TodosList>
+  <StatusBar></StatusBar>
 </template>
 
 <script>
 import ComHeader from "./components/ComHeader.vue";
 import DispatchDB from "./components/DispatchDB.vue";
+import NavbarListComponent from "./components/NavbarListComponent.vue";
+import StatusBar from "./components/StatusBar.vue";
+import TodosList from "./components/TodosList.vue";
 import { YoutubeData } from "./data.js";
 
 export default {
@@ -22,6 +28,9 @@ export default {
   components: {
     ComHeader,
     DispatchDB,
+    NavbarListComponent,
+    TodosList,
+    StatusBar,
   },
   data() {
     return {
