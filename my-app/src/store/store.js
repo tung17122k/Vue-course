@@ -23,6 +23,13 @@ const store = createStore({
       isAuthenticated: true,
     },
   },
+  getters: {
+      completedTodos: state => state.todos.filter(item => item.completed),
+      todos: state => state.todos,
+      progress: (state, getters) => {
+        return Math.round((getters.completedTodos.length / state.todos.length) * 100)
+      }
+  }
 });
 
 export default store;

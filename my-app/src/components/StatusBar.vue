@@ -12,23 +12,28 @@
 
 <script>
 // import { mapState } from "vuex";
+import { mapGetters } from 'vuex';
 export default {
-  computed: {
-    completedTodos() {
-      return this.$store.state.todos.filter((item) => item.completed);
-    },
-    todo() {
-      return this.$store.state.todos;
-    },
-    progress() {
-      return Math.round(
-        (this.$store.state.todos.filter((item) => item.completed).length /
-          this.$store.state.todos.length) *
-          100
-      );
-    },
-  },
-};
+  computed: { ...mapGetters({
+    completedTodos: 'completedTodos',
+     todos: 'todos',
+     progress: 'progress'
+})}
+    // completedTodos(){
+    //   return this.$store.getters.completedTodos;
+    // },
+    // todo() {
+    //   return this.$store.state.todos;
+    // },
+    // progress() {
+    //   return Math.round(
+    //     (this.$store.state.todos.filter((item) => item.completed).length /
+    //       this.$store.state.todos.length) *
+    //       100
+    //   );
+    // },
+  }
+
 </script>
 
 <style scoped>
