@@ -6,16 +6,18 @@
       <li>About</li>
       <li v-if="isAuthenticated">
         Total Todo: {{ totalTodos }}
-        <button>Logout</button>
+        <button @click="TOGGLE_AUTH">Logout</button>
       </li>
-      <button v-else>Login</button>
+      <button v-else @click="TOGGLE_AUTH">Login</button>
     </ul>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { mapMutations } from "vuex";
 export default {
+  methods: mapMutations(['TOGGLE_AUTH']),
   computed: mapState({
     totalTodos: (state) => state.todos.length,
     isAuthenticated: (state) => state.auth.isAuthenticated,
