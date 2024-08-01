@@ -19,6 +19,8 @@
     <CardTailwind></CardTailwind>
   </div>
   <HackerNews class="mt-[60px]"></HackerNews>
+  <RegisterForm></RegisterForm>
+
   
 </template>
 
@@ -31,6 +33,7 @@ import TodosList from "./components/TodosList.vue";
 import CardTailwind from "./components/CardTailwind.vue";
 import HackerNews from "./components/HackerNews.vue";
 import { YoutubeData } from "./data.js";
+import RegisterForm from "./components/Form/RegisterForm.vue"
 
 export default {
   name: "App",
@@ -41,7 +44,8 @@ export default {
     TodosList,
     StatusBar,
     CardTailwind,
-    HackerNews
+    HackerNews,
+    RegisterForm
   },
   data() {
     return {
