@@ -13,6 +13,15 @@
   <NavbarListComponent></NavbarListComponent>
   <TodosList></TodosList>
   <StatusBar></StatusBar>
+  <div class="flex flex-col-3 gap-5 p-3 mt-5 mb-5">
+    <CardTailwind></CardTailwind>
+    <CardTailwind></CardTailwind>
+    <CardTailwind></CardTailwind>
+  </div>
+  <HackerNews class="mt-[60px]"></HackerNews>
+  <RegisterForm></RegisterForm>
+
+  
 </template>
 
 <script>
@@ -21,7 +30,10 @@ import DispatchDB from "./components/DispatchDB.vue";
 import NavbarListComponent from "./components/NavbarListComponent.vue";
 import StatusBar from "./components/StatusBar.vue";
 import TodosList from "./components/TodosList.vue";
+import CardTailwind from "./components/CardTailwind.vue";
+import HackerNews from "./components/HackerNews.vue";
 import { YoutubeData } from "./data.js";
+import RegisterForm from "./components/Form/RegisterForm.vue"
 
 export default {
   name: "App",
@@ -31,6 +43,9 @@ export default {
     NavbarListComponent,
     TodosList,
     StatusBar,
+    CardTailwind,
+    HackerNews,
+    RegisterForm
   },
   data() {
     return {
